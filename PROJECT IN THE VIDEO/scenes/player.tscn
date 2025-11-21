@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://2vipq16e6h77"]
+[gd_scene load_steps=30 format=4 uid="uid://2vipq16e6h77"]
 
 [ext_resource type="Script" uid="uid://ctn23koikptbw" path="res://scripts/player.gd" id="1_m40dy"]
 [ext_resource type="Shader" uid="uid://bmgua5wklwecl" path="res://Shaders/PostProcessShader.gdshader" id="2_2fgn6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ct56c563jg8kc" path="res://Shaders/Hatching.jpg" id="4_q0iqn"]
 [ext_resource type="Texture2D" uid="uid://trh76tlbfnum" path="res://icon.svg" id="6_fjrip"]
 [ext_resource type="Shader" uid="uid://bqdpunvjqwfpn" path="res://Shaders/ChromaticAbberation.gdshader" id="6_tuyoq"]
+[ext_resource type="Shader" uid="uid://b7060nmhlvgvk" path="res://Shaders/ColorQuantization.gdshader" id="7_smehm"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_62qsa"]
 height = 1.8
@@ -4160,6 +4161,14 @@ render_priority = 0
 shader = ExtResource("2_2fgn6")
 shader_parameter/depth_treshold = 0.05
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ur7pv"]
+shader = ExtResource("7_smehm")
+shader_parameter/shader_enabled = true
+shader_parameter/dithering = true
+shader_parameter/dithering_size = 2
+shader_parameter/resolution_scale = 2
+shader_parameter/quantization_level = 16
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrip"]
 shader = ExtResource("6_tuyoq")
 shader_parameter/levels = 3
@@ -5029,11 +5038,17 @@ surface_material_override/0 = SubResource("ShaderMaterial_kylmm")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(2392.0002, 441)
-scale = Vector2(4.796875, 1)
+position = Vector2(-31.000004, 738.00006)
+scale = Vector2(6.308593, 3.5546875)
 texture = ExtResource("6_fjrip")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorQuantization" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ur7pv")
+offset_right = 977.0
+offset_bottom = 1105.0
+
+[node name="ChromaticAbberation" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_fjrip")
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -14.0
