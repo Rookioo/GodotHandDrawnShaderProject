@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://dosjeqdjv230m"]
+[gd_scene load_steps=17 format=3 uid="uid://dosjeqdjv230m"]
 
 [ext_resource type="PackedScene" uid="uid://5shmtw42t3pc" path="res://Bot.gltf" id="1_d38mo"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://asset/textures/grids/Dark/texture_05.png" id="2_32axf"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://asset/textures/grids/Orange/texture_09.png" id="3_wddmb"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://asset/textures/grids/Purple/texture_09.png" id="4_ixbnd"]
+[ext_resource type="Shader" uid="uid://b4g66p0ytdofl" path="res://Shaders/AnimatedShader.gdshader" id="4_tipki"]
 [ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://asset/textures/grids/Green/texture_10.png" id="5_7m5ef"]
+[ext_resource type="Texture2D" uid="uid://ct56c563jg8kc" path="res://Shaders/Hatching.jpg" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://2vipq16e6h77" path="res://scenes/player.tscn" id="6_qbxuk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8lbx0"]
@@ -29,6 +31,17 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvmid"]
 albedo_texture = ExtResource("3_wddmb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_choun"]
+render_priority = 0
+shader = ExtResource("4_tipki")
+shader_parameter/size = 0.4
+shader_parameter/intensity = 0.05
+shader_parameter/frame_time = 0.17
+shader_parameter/light_direction = Vector3(-0.483, 0.966, -0.129)
+shader_parameter/hatch = ExtResource("5_85g3d")
+shader_parameter/color = Color(0.12129893, 0.5174315, 0.92101514, 1)
+shader_parameter/hatch_size = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5070c"]
 albedo_texture = ExtResource("4_ixbnd")
@@ -61,6 +74,16 @@ size = Vector3(1000, 1, 1000)
 transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, -2.0872, 0, 6.70164)
 material_override = SubResource("StandardMaterial3D_pvmid")
 use_collision = true
+
+[node name="box3" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, -3.7319126, 0, 5.425102)
+use_collision = true
+material = SubResource("ShaderMaterial_choun")
+
+[node name="box4" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, -3.703487, 0, 1.604696)
+use_collision = true
+material = SubResource("ShaderMaterial_choun")
 
 [node name="box2" type="CSGBox3D" parent="map"]
 transform = Transform3D(1.96194, 0, 0.388332, 0, 2, 0, -0.388332, 0, 1.96194, -7.27576, 0.490669, 1.98596)
