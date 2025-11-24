@@ -7,9 +7,9 @@
 render_priority = 0
 shader = ExtResource("1_kd2v6")
 shader_parameter/size = 0.26
-shader_parameter/intensity = 0.7
+shader_parameter/intensity = 0.001
 shader_parameter/frame_time = 0.17
 shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
 shader_parameter/hatch = ExtResource("2_82dwv")
-shader_parameter/color = Color(0.9143375, 0.08230848, 0.09945276, 1)
+shader_parameter/color = Color(0.8392157, 0, 0, 1)
 shader_parameter/hatch_size = 1.0

@@ -1,0 +1,205 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0ncdxei63vxr"]
+
+[ext_resource type="PackedScene" uid="uid://5shmtw42t3pc" path="res://Bot.gltf" id="1_8uhr2"]
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://asset/textures/grids/Dark/texture_05.png" id="2_3br4m"]
+[ext_resource type="Shader" uid="uid://b4g66p0ytdofl" path="res://Shaders/AnimatedShader.gdshader" id="4_07bxp"]
+[ext_resource type="PackedScene" uid="uid://2vipq16e6h77" path="res://scenes/player.tscn" id="8_hyhbb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8lbx0"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fieel"]
+sky_material = SubResource("ProceduralSkyMaterial_8lbx0")
+
+[sub_resource type="Environment" id="Environment_8t2v5"]
+background_mode = 2
+sky = SubResource("Sky_fieel")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.658824, 0.682353, 0.686275, 1)
+fog_density = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqucg"]
+albedo_texture = ExtResource("2_3br4m")
+uv1_triplanar = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2jj31"]
+load_path = "res://.godot/imported/Hatching.jpg-44c2e374050e6498bce8b54224e6d4a0.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drx7m"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.1
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.9529412, 0.7882353, 0.32941177, 1)
+shader_parameter/hatch_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_movw8"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.2
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.42352942, 0.77254903, 0.7647059, 1)
+shader_parameter/hatch_size = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oacpt"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.2
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.28235295, 0.69803923, 0.44705883, 1)
+shader_parameter/hatch_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jj31"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.3
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.84705883, 0.36862746, 0.67058825, 1)
+shader_parameter/hatch_size = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uhr2"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.4
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.9647059, 0.7607843, 0.78431374, 1)
+shader_parameter/hatch_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3br4m"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.5
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.12941177, 0.40784314, 0.59607846, 1)
+shader_parameter/hatch_size = 2.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lp1f"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.5
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.9764706, 0.8784314, 0.32156864, 1)
+shader_parameter/hatch_size = 2.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07bxp"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.6
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.28235295, 0.69803923, 0.44705883, 1)
+shader_parameter/hatch_size = 2.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8eg3"]
+render_priority = 0
+shader = ExtResource("4_07bxp")
+shader_parameter/size = 1.0
+shader_parameter/intensity = 0.55
+shader_parameter/frame_time = 10000.0
+shader_parameter/light_direction = Vector3(-0.483, 0.866, -0.129)
+shader_parameter/hatch = SubResource("CompressedTexture2D_2jj31")
+shader_parameter/color = Color(0.48235294, 0.5372549, 0.7607843, 1)
+shader_parameter/hatch_size = 2.25
+
+[node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.258823, 0.836517, -0.48296, -4.27073e-08, 0.499998, 0.866027, 0.965925, 0.224147, -0.129411, -10, 8, -4)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8t2v5")
+
+[node name="AuxScene" parent="." instance=ExtResource("1_8uhr2")]
+visible = false
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_fqucg")
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="box3" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, 7.0839787, 4.375412, 4.748317)
+material_override = SubResource("ShaderMaterial_drx7m")
+use_collision = true
+size = Vector3(3.9663086, 9.750824, 3.6396484)
+
+[node name="box4" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.8513155, 0, 0.5246551, 0, 1, 0, -0.5246551, 0, 0.8513155, 0.90613127, 10.2909775, 13.172562)
+material_override = SubResource("ShaderMaterial_movw8")
+use_collision = true
+size = Vector3(6.3062744, 21.581955, 5.782715)
+
+[node name="box5" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.12356677, 0, 0.99233675, 0, 1, 0, -0.99233675, 0, 0.12356677, 15.18269, 8.044476, 0.07749224)
+material_override = SubResource("ShaderMaterial_oacpt")
+use_collision = true
+size = Vector3(7.178589, 17.088951, 3.6396484)
+
+[node name="box6" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.9434722, 0, -0.33145314, 0, 1, 0, 0.33145314, 0, 0.9434722, 17.09094, 8.044476, 16.395458)
+material_override = SubResource("ShaderMaterial_2jj31")
+use_collision = true
+size = Vector3(18.079529, 17.088951, 6.1796875)
+
+[node name="box7" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.8513155, 0, 0.5246551, 0, 1, 0, -0.5246551, 0, 0.8513155, 34.86027, 24.136833, 11.836987)
+material_override = SubResource("ShaderMaterial_8uhr2")
+use_collision = true
+size = Vector3(12.896301, 47.916466, 13.938721)
+
+[node name="box8" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.9739527, 0, 0.22675362, 0, 1, 0, -0.22675362, 0, 0.9739527, 50.823627, 24.136833, -20.633522)
+material_override = SubResource("ShaderMaterial_3br4m")
+use_collision = true
+size = Vector3(12.896301, 47.916466, 34.50305)
+
+[node name="box9" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.100030944, -0.08575463, -0.9912826, 0.037833113, 0.99588627, -0.08233524, 0.99426526, -0.0292672, 0.10286387, 3.5087624, 19.837397, 37.156536)
+material_override = SubResource("ShaderMaterial_4lp1f")
+use_collision = true
+size = Vector3(12.896301, 47.916466, 39.692932)
+
+[node name="box10" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.8513155, 0, 0.5246551, 0, 1, 0, -0.5246551, 0, 0.8513155, 66.83425, 47.326233, 28.924368)
+material_override = SubResource("ShaderMaterial_07bxp")
+use_collision = true
+size = Vector3(41.02823, 94.29527, 43.132263)
+
+[node name="box11" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.8513155, 0, 0.5246551, 0, 1, 0, -0.5246551, 0, 0.8513155, 30.928917, 34.884026, 96.42676)
+material_override = SubResource("ShaderMaterial_q8eg3")
+use_collision = true
+size = Vector3(41.02823, 94.29527, 43.132263)
+
+[node name="Player" parent="." instance=ExtResource("8_hyhbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://rid1k6vbhrtk"]
+
+[ext_resource type="PackedScene" uid="uid://beecrq1gv7kob" path="res://asset/cityscape_speed_art.glb" id="1_glskv"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_glskv")]
