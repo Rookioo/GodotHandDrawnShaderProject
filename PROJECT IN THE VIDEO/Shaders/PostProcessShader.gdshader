@@ -39,7 +39,8 @@ float get_depth(vec2 screen_uv, mat4 inv_projection_matrix)
 }
 
 void vertex() {
-	POSITION = vec4(VERTEX, 1.0);
+	// POSITION = vec4(VERTEX, 1.0);
+	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
 }
 
 // where edge detection happens for every pixel on the screen
@@ -55,7 +56,7 @@ void fragment() {
 	
 	// GET SURROUNDING TEXEL
 	// calculate the size of a single pixel then creates an array of UV coordinates for the 4 adjecent pixels
-	vec2 texel_size = 1.0 / VIEWPORT_SIZE.xy;
+	vec2 texel_size = 2.0 / VIEWPORT_SIZE.xy;
 	vec2 uvs[4]; // arrray containing the uvs of the surrounding pixel
 	// up
 	uvs[0] = vec2(SCREEN_UV.x, SCREEN_UV.y + texel_size.y );
@@ -90,5 +91,7 @@ void fragment() {
 	// final outline calculation
 	float depth_edge = step(depth_treshold, depth_diff);
 	float outline = depth_edge + normal_sum;	
+	
+	//ALBEDO = vec3(depth_diff + normal_sum);
 	ALBEDO = mix(original, vec3(0.0), outline);
 }

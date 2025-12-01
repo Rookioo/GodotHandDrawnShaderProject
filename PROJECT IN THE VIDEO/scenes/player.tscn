@@ -4159,7 +4159,7 @@ size = Vector2(2, 2)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kylmm"]
 render_priority = 0
 shader = ExtResource("2_2fgn6")
-shader_parameter/depth_treshold = 0.05
+shader_parameter/depth_treshold = 0.001
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrip"]
 shader = ExtResource("6_tuyoq")
