@@ -40,7 +40,7 @@ shader_parameter/intensity = 0.05
 shader_parameter/frame_time = 0.17
 shader_parameter/light_direction = Vector3(-0.483, 0.966, -0.129)
 shader_parameter/hatch = ExtResource("5_85g3d")
-shader_parameter/color = Color(0.88235295, 0, 0, 1)
+shader_parameter/color = Color(0.882353, 0, 0, 1)
 shader_parameter/hatch_size = 100.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5070c"]
@@ -76,13 +76,13 @@ material_override = SubResource("StandardMaterial3D_pvmid")
 use_collision = true
 
 [node name="box3" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.5203688, 0, 0.8539416, 0, 1, 0, -0.8539416, 0, 0.5203688, -4.6822205, 10.186493, -11.963024)
+transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, -4.68222, 10.1865, -11.963)
 use_collision = true
-size = Vector3(39.285156, 15.347168, 7.986328)
+size = Vector3(39.2852, 15.3472, 7.98633)
 material = SubResource("ShaderMaterial_choun")
 
 [node name="box4" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, -3.703487, 0, 1.604696)
+transform = Transform3D(0.520369, 0, 0.853942, 0, 1, 0, -0.853942, 0, 0.520369, -3.70349, 0, 1.6047)
 use_collision = true
 material = SubResource("ShaderMaterial_choun")
 

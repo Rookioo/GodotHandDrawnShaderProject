@@ -1,10 +1,10 @@
 [gd_scene load_steps=31 format=4 uid="uid://2vipq16e6h77"]
 
 [ext_resource type="Script" uid="uid://ctn23koikptbw" path="res://scripts/player.gd" id="1_m40dy"]
+[ext_resource type="Shader" uid="uid://bmgua5wklwecl" path="res://Shaders/PostProcessShader.gdshader" id="2_2fgn6"]
 [ext_resource type="Material" uid="uid://cnyh0hjr0qjaf" path="res://Shaders/AnimatedMat.tres" id="2_utd38"]
 [ext_resource type="Shader" uid="uid://b4g66p0ytdofl" path="res://Shaders/AnimatedShader.gdshader" id="3_p7cbg"]
 [ext_resource type="Texture2D" uid="uid://ct56c563jg8kc" path="res://Shaders/Hatching.jpg" id="4_q0iqn"]
-[ext_resource type="Shader" uid="uid://bvcesyb8nr05j" path="res://Shaders/8SAMP_PostProcessShader.gdshader" id="5_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://trh76tlbfnum" path="res://icon.svg" id="6_fjrip"]
 [ext_resource type="Shader" uid="uid://bqdpunvjqwfpn" path="res://Shaders/ChromaticAbberation.gdshader" id="6_tuyoq"]
 [ext_resource type="Shader" uid="uid://cykntdrwd728g" path="res://Shaders/ColorQuantization.gdshader" id="7_ur7pv"]
@@ -4159,7 +4159,7 @@ size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kylmm"]
 render_priority = 0
-shader = ExtResource("5_ur7pv")
+shader = ExtResource("2_2fgn6")
 shader_parameter/depth_treshold = 0.001
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrip"]
@@ -5046,27 +5046,23 @@ texture = ExtResource("6_fjrip")
 
 [node name="ChromaticAbberation" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_fjrip")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -11.0
+offset_top = -58.0
+offset_right = 1909.0
+offset_bottom = 1140.0
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer"]
-position = Vector2(1970.5, 1120.5)
-scale = Vector2(19.835, 11.335)
+position = Vector2(964, 547)
+scale = Vector2(9.77, 5.6)
 copy_mode = 2
 
 [node name="ColorQuantization" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_ur7pv")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1929.0
+offset_bottom = 1105.0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-visible = false
 offset_right = 141.0
 offset_bottom = 80.0
 script = ExtResource("9_ur7pv")

@@ -57,22 +57,29 @@ void fragment() {
 	// GET SURROUNDING TEXEL
 	// calculate the size of a single pixel then creates an array of UV coordinates for the 4 adjecent pixels
 	vec2 texel_size = 2.0 / VIEWPORT_SIZE.xy;
-	vec2 uvs[4]; // arrray containing the uvs of the surrounding pixel
-	// up
-	uvs[0] = vec2(SCREEN_UV.x, SCREEN_UV.y + texel_size.y );
-	// down
-	uvs[1] = vec2(SCREEN_UV.x, SCREEN_UV.y - texel_size.y );
-	// left
-	uvs[2] = vec2(SCREEN_UV.x + texel_size.x, SCREEN_UV.y);
-	// right
-	uvs[3] = vec2(SCREEN_UV.x - texel_size.x, SCREEN_UV.y);
-
+vec2 uvs[8]; // array containing the uvs of all surrounding pixels
+// up
+uvs[0] = vec2(SCREEN_UV.x, SCREEN_UV.y + texel_size.y);
+// down
+uvs[1] = vec2(SCREEN_UV.x, SCREEN_UV.y - texel_size.y);
+// left
+uvs[2] = vec2(SCREEN_UV.x - texel_size.x, SCREEN_UV.y);
+// right
+uvs[3] = vec2(SCREEN_UV.x + texel_size.x, SCREEN_UV.y);
+// top-left
+uvs[4] = vec2(SCREEN_UV.x - texel_size.x, SCREEN_UV.y + texel_size.y);
+// top-right
+uvs[5] = vec2(SCREEN_UV.x + texel_size.x, SCREEN_UV.y + texel_size.y);
+// bottom-left
+uvs[6] = vec2(SCREEN_UV.x - texel_size.x, SCREEN_UV.y - texel_size.y);
+// bottom-right
+uvs[7] = vec2(SCREEN_UV.x + texel_size.x, SCREEN_UV.y - texel_size.y);
 	//EDGE DETECTION
 	float depth_diff = 0.0;
 	float normal_sum = 0.0;
 
 	// loops through the 4 surrounding pixels comparing their properties to the current pixel's properties
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		// sums the real world depth between the current pixel and its neighbors
 		float d = get_depth(uvs[i], INV_PROJECTION_MATRIX);
