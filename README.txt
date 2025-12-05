@@ -22,3 +22,6 @@ Averages taken after ~30 seconds in the scene
 
 
 LINK TO PRESENTATION: https://docs.google.com/presentation/d/1ozb84EKCFJ_bDKYLV3O5GTAgL0vOMp9L4mPUbxFvwhc/edit?usp=sharing
+
+
+THIS PROJECT STARTED AS A CLONE OF THE PUBLIC PROJECT IN THIS VIDEO (CONTAINS THE PLAYER MATERIAL AND OUTLINE SHADER): https://www.bing.com/videos/riverview/relatedvideo?q=godot+hand+drawn+shader&&mid=46F1E90490A9AAE11A1446F1E90490A9AAE11A14&FORM=VAMGZC
