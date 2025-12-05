@@ -19,3 +19,6 @@ SAMPLING 3 NEIGHBORING PIXELS:
   AVG GPU RENDER TIME: 15.21
 
 Averages taken after ~30 seconds in the scene
+
+
+LINK TO PRESENTATION: https://docs.google.com/presentation/d/1ozb84EKCFJ_bDKYLV3O5GTAgL0vOMp9L4mPUbxFvwhc/edit?usp=sharing
